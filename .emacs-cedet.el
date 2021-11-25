@@ -500,7 +500,10 @@
 ;; this will lead to displaying of small triangles at the fringle field,
 ;; and you will able to fold and unfold pieces of code by clicking on them
 ;; (this should work not only for source code, but also for comments, and other objects).
-;;(global-semantic-tag-folding-mode 1)
+(defun my-code-folding-hook ()
+  (local-set-key "\C-c-" 'semantic-tag-folding-fold-all)
+  (local-set-key "\C-c+" 'semantic-tag-folding-show-all))
+(add-hook 'c-mode-common-hook 'my-code-folding-hook)
 ;; Senator also has similar functionality, but it's usually used for top-level objects —
 ;; functions, class declarations, etc. You can fold piece of code with the senator-fold-tag
 ;; command (C-c , -), and unfold it with senator-unfold-tag (C-c , +).
