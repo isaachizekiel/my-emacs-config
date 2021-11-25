@@ -5,4 +5,3 @@
 ;;                      :include-path '("/" "/Common"  "/Interfaces" "/Libs" )
 ;;                      :system-include-path '("~/exp/include")
 ;;                      :spp-table '(("isUnix" . "")  ("BOOST_TEST_DYN_LINK" . "")))
-
