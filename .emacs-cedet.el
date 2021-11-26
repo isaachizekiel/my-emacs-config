@@ -1,16 +1,3 @@
-;; A Gentle introduction to CEDET
-;;
-;; git clone http://git.code.sf.net/p/cedet/git cedet 
-;; make clean-all && make
-;;
-;; Customization
-;; 
-;; If you're using standalone CEDET's version, then you need to load it with following command:
-;; 
-;; (load-file "~/emacs/cedet-bzr/cedet-devel-load.el")
-;;
-;; But if you're using CEDET bundled with GNU Emacs, then everything will be already loaded on start.
-;;
 ;;
 ;; enables global support for Semanticdb;
 (add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
@@ -102,15 +89,6 @@
 ;;
 (setq-mode-local c++-mode semanticdb-find-default-throttle
 		 '(project unloaded system recursive))
-;;
-;;
-;; Integration with imenu
-;; The Semantic package can be integrated with the imenu package.
-;; This lead to creation of a menu with a list of functions, variables, and other tags.
-;; To enable this feature you need to add following code into your initialization file:
-;;
-(semanticdb-enable-gnu-global-databases 'c-mode)  
-(semanticdb-enable-gnu-global-databases 'c++-mode))
 ;;
 ;;
 ;; EDE's customization
