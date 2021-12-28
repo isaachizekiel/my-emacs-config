@@ -1,6 +1,5 @@
 ;; theme
 (load-theme 'tango-dark t)
-;;(load-file ".emacs-cedet.el")
 
 ;; misc
 (tool-bar-mode -1)
@@ -9,9 +8,10 @@
 (setq compilation-scroll-output t)
 (setq-default c-basic-offset 2)
 
-(custom-set-variables '(package-selected-packages '(eglot)))
-(custom-set-faces )
-(require 'eglot)
-(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd-9" "-log=verbose"))
-(add-hook 'c-mode-hook 'eglot-ensure)
-(add-hook 'c++-mode-hook 'eglot-ensure)
+(load-file "emacs-mods/lsp-mode.el")
+(load-file "emacs-mods/cmake-mode.el")
+
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <left>") 'windmove-left)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
